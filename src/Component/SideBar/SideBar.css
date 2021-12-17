@@ -1,0 +1,28 @@
+.sideImg {
+  width: 100%;
+  height: 250px;
+  margin: 20px 0px;
+}
+.sideArea {
+}
+.sideArea .sideItem {
+  width: 40%;
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+.sideArea .sideItem a {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-family: var(--primaryfont-family);
+  background-color: white;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .sideBar {
+    margin-top: 50px;
+  }
+}

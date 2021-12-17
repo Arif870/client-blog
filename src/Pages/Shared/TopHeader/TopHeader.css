@@ -1,0 +1,17 @@
+.login {
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 4px 14px;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  transition: all 0.5s ease;
+}
+.login:hover {
+  border: 3px solid #fc7200;
+  color: #fc7200;
+}
+.navbar-nav {
+  margin-right: 20px;
+}
