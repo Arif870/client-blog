@@ -16,6 +16,7 @@ const SinglePost = () => {
       >
         Single Post
       </h2>
+      <h5>sumaiya</h5>
     </div>
   );
 };
