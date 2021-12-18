@@ -52,7 +52,13 @@ const Register = () => {
         text: error,
       });
     } else {
-      registerUser(loginData.email, loginData.password, navigate, location);
+      registerUser(
+        loginData.name,
+        loginData.email,
+        loginData.password,
+        navigate,
+        location
+      );
     }
 
     e.preventDefault();
@@ -73,7 +79,7 @@ const Register = () => {
             <div className="w-100">
               <form onSubmit={handleRegisterSubmit} className="w-100">
                 <input
-                  onChange={handleOnChange}
+                  onBlur={handleOnChange}
                   className="form-control mb-3 border-0 shadow rounded"
                   placeholder="name"
                   type="text"
@@ -82,7 +88,7 @@ const Register = () => {
                 />
 
                 <input
-                  onChange={handleOnChange}
+                  onBlur={handleOnChange}
                   className="form-control mb-3 border-0 shadow rounded"
                   placeholder="email"
                   type="email"
@@ -90,7 +96,7 @@ const Register = () => {
                   id="email_reg"
                 />
                 <input
-                  onChange={handleOnChange}
+                  onBlur={handleOnChange}
                   className="form-control mb-3 border-0 shadow rounded"
                   placeholder="password"
                   type="password"
@@ -98,7 +104,7 @@ const Register = () => {
                   id="pass_reg"
                 />
                 <input
-                  onChange={handleOnChange}
+                  onBlur={handleOnChange}
                   className="form-control mb-4 border-0 shadow rounded"
                   placeholder="retype password"
                   type="password"

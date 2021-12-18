@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   signOut,
   GoogleAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 import Swal from "sweetalert2";
 
@@ -41,12 +42,25 @@ const useFirebase = () => {
   };
   // =====================================================Register
   //
-  const registerUser = (email, password, navigate, location) => {
+  const registerUser = (name, email, password, navigate, location) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setError("");
         //---------
+        const newUser = { email, displayName: name };
+        setUser(newUser);
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        })
+          .then(() => {
+            // Profile updated!
+            // ...
+          })
+          .catch((error) => {
+            // An error occurred
+            // ...
+          });
 
         Swal.fire("Successfully Register!", "Thank You", "success");
 
@@ -77,6 +91,9 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+  // =====================================================Update profile
+  //
+
   // =====================================================SIGN OUT
   //
   const logout = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import TopHeader from "../Shared/TopHeader/TopHeader";
 
@@ -18,13 +18,11 @@ const Login = () => {
     const newLoginData = { ...loginData };
     newLoginData[field] = value;
     setloginData(newLoginData);
-    console.log("loginData", loginData);
   };
 
   const handleLoginSubmit = (e) => {
     loginUser(loginData.email, loginData.password, navigate, location);
     e.preventDefault();
-    console.log("clicked");
   };
 
   //==============google
@@ -42,14 +40,14 @@ const Login = () => {
             <div className="w-100">
               <form onSubmit={handleLoginSubmit} className="w-100">
                 <input
-                  onChange={handleOnChange}
+                  onBlur={handleOnChange}
                   className="form-control mb-3 border-0 shadow rounded"
                   placeholder="email"
                   type="email"
                   name="email"
                 />
                 <input
-                  onChange={handleOnChange}
+                  onBlur={handleOnChange}
                   className="form-control mb-4 border-0 shadow rounded"
                   placeholder="password"
                   type="password"

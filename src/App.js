@@ -4,7 +4,6 @@ import "./App.css";
 import AuthProvider from "./Context/AuthProvider";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
-import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import Profile from "./Pages/Profile/Profile";
 import Register from "./Pages/Register/Register";
 import SinglePost from "./Pages/SinglePost/SinglePost";
