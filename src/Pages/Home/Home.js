@@ -18,12 +18,12 @@ const Home = () => {
           paddingTop: "50px",
           paddingBottom: "50px",
         }}
-        className="ms-0 me-0"
+        className="ms-0 me-0 d-flex justify-content-center g-5"
       >
         <Col md={8} lg={8}>
           <Posts />
         </Col>
-        <Col md={4} lg={4}>
+        <Col md={6} lg={4}>
           <SideBar></SideBar>
         </Col>
       </Row>

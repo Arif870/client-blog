@@ -3,7 +3,11 @@ import { Col, Nav, Navbar, Row, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./TopHeader.css";
 
+import useAuth from "../../../Hooks/useAuth";
+
 const TopHeader = () => {
+  const { user, logout } = useAuth();
+
   return (
     <div style={{ backgroundColor: "var(--secondary-color)" }}>
       <Container>
@@ -17,7 +21,7 @@ const TopHeader = () => {
                   fontWeight: "700",
                   fontFamily: "Lora",
                 }}
-                href="#home"
+                href="/home"
               >
                 BlogBD
               </Navbar.Brand>
@@ -47,8 +51,15 @@ const TopHeader = () => {
                       alt="profile"
                     />
                   </Nav.Link>
-
-                  <button className="login">Login</button>
+                  {user.email ? (
+                    <button onClick={logout} className="login">
+                      Logout
+                    </button>
+                  ) : (
+                    <Link to="/login">
+                      <button className="login">Login</button>
+                    </Link>
+                  )}
                 </div>
               </Navbar.Collapse>
             </Navbar>

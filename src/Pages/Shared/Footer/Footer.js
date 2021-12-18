@@ -15,7 +15,7 @@ const Footer = () => {
                 fontWeight: "700",
                 fontFamily: "Lora",
               }}
-              href="#home"
+              href="/home"
             >
               BlogBD
             </Navbar.Brand>
